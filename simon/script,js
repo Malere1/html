@@ -1,0 +1,34 @@
+const bookingForm = document.getElementById("bookingForm");
+
+bookingForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const eventType = document.getElementById("eventType").value;
+    const packageName = document.getElementById("package").value;
+    const date = document.getElementById("date").value;
+    const location = document.getElementById("location").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappNumber = "2348012345678";
+
+    const whatsappMessage =
+        "Hello Maiduguri Elite Security,%0A%0A" +
+        "I would like to book your security service.%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Event Type: " + eventType + "%0A" +
+        "Security Package: " + packageName + "%0A" +
+        "Event Date: " + date + "%0A" +
+        "Event Location: " + location + "%0A" +
+        "Additional Information: " + message;
+
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + whatsappMessage;
+
+    window.open(whatsappURL, "_blank");
+
+});
